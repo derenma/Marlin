@@ -690,7 +690,7 @@
 #define Z_DRIVER_TYPE  TMC2130
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE TMC2130
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 #define E0_DRIVER_TYPE TMC2130
@@ -748,11 +748,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-<<<<<<< HEAD
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
-=======
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
->>>>>>> bugfix-2.0.x
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -997,7 +993,21 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -42, +4, 0 }
+
+ /**
+ * Hero Me Gen5 Offsets
+ * 
+ * BLTouch_Wing_Wide.stl with BLTouch_Standard_Mount.stl X -60, Y -13
+ * BLTouch_Wing_Wide.stl with BLTouch_Flat_Mount.stl X -68, Y -2
+ * BLTouch_Wing_Medium.stl with BLTouch_Standard_Mount.stl X -55, Y -13
+ * BLTouch_Wing_Medium.stl with BLTouch_Flat_Mount.stl X -64, Y -2
+ * BLTouch_Wing_Narrow.stl with BLTouch_Standard_Mount.stl X -43, Y -13
+ * BLTouch_Wing_Narrow.stl with BLTouch_Flat_Mount.stl X -51, Y -12
+ * BLTouch_Wing_No_Duct.stl with BLTouch_Standard_Mount.stl X -37, Y -8
+ * BLTouch_Wing_No_Duct.stl with BLTouch_Flat_Mount.stl X -46, Y +2
+ * BLTouch_Wing_Compact.stl with BLTouch_Slider_Compact.stl X -38, Y +6
+ */
+#define NOZZLE_TO_PROBE_OFFSET { -44, -13, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
